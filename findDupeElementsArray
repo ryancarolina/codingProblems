@@ -1,0 +1,23 @@
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Created by ryanconklin on 2/27/17.
+ */
+public class FindDupeElementsArrayTest {
+    public static void main(String[] args){
+        String dupes[] = new String[]{"java", "spring", "coffee", "java"};
+        Set nonDupeSet = new HashSet();
+        Set dupeSet = new HashSet();
+
+        for(String string : dupes){
+            if(!nonDupeSet.contains(string)){
+                nonDupeSet.add(string);
+            }else{
+                dupeSet.add(string);
+            }
+        }
+        System.out.println(dupeSet);
+    }
+
+}
