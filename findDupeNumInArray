@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+/**
+ * Created by ryanconklin on 3/7/17.
+ */
+public class Ryan {
+
+    public static void main(String [] args){
+        int [] array1 = {1,2,3,4,4,31,88,31};
+        ArrayList<Integer> dupeList = new ArrayList<Integer>();
+        ArrayList<Integer> nonDupeList = new ArrayList<Integer>();
+
+        for(Integer i : array1){
+            if(!nonDupeList.contains(i)){
+                nonDupeList.add(i);
+            }else{
+                dupeList.add(i);
+            }
+        }
+
+        System.out.println(dupeList);
+
+    }
+
+}
