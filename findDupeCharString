@@ -10,7 +10,7 @@ class FindDupeCharString {
     public  void findDupeCharStringTest(String str) {
 
         Map<Character, Integer> dupeMap = new HashMap<Character, Integer>();
-        char[] charsArray = str.toCharArray();
+        char[] charsArray = str.toLowerCase().toCharArray();
 
         for (Character chara : charsArray) {
             if (dupeMap.containsKey(chara)) {
@@ -32,7 +32,7 @@ class FindDupeCharString {
          public static void main(String [] args){
 
             FindDupeCharString dcs = new FindDupeCharString();
-            dcs.findDupeCharStringTest("Brennonismybrother");
+            dcs.findDupeCharStringTest("BrennonIsMyBrother");
     }
 
 }
