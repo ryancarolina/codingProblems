@@ -1,0 +1,38 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * Created by ryanconklin on 3/7/17.
+ */
+class FindDupeCharString {
+
+    public  void findDupeCharStringTest(String str) {
+
+        Map<Character, Integer> dupeMap = new HashMap<Character, Integer>();
+        char[] charsArray = str.toCharArray();
+
+        for (Character chara : charsArray) {
+            if (dupeMap.containsKey(chara)) {
+                dupeMap.put(chara, dupeMap.get(chara) + 1);
+            } else {
+                dupeMap.put(chara, 1);
+            }
+
+        }
+
+        Set<Character> keys = dupeMap.keySet();
+        for (Character chara2 : keys) {
+            if (dupeMap.get(chara2) > 1) {
+                System.out.println(chara2 + " Total: " + dupeMap.get(chara2));
+            }
+        }
+    }
+
+         public static void main(String [] args){
+
+            FindDupeCharString dcs = new FindDupeCharString();
+            dcs.findDupeCharStringTest("Brennonismybrother");
+    }
+
+}
