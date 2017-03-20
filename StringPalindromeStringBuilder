@@ -1,0 +1,29 @@
+import org.junit.Test;
+
+/**
+ * Created by ryanconklin on 3/7/17.
+ */
+@SuppressWarnings("Since15")
+public class Ryan {
+
+    public String palindrome(String input){
+        String rev1 = new  StringBuilder(input).reverse().toString();
+
+        if(!input.equals(rev1)){
+            System.out.print(input + " is not a palindrome " + "\n");
+        }else if(input.equals(rev1)){
+            System.out.println(input + " is a palindrome! ");
+        }
+        return input;
+    }
+
+    @Test
+    public void palindromeTest(){
+        palindrome("root");
+        palindrome("racecar");
+        palindrome("dad");
+        palindrome("evacanistabbatsinacave");
+        }
+    }
+
+
