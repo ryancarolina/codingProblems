@@ -13,15 +13,14 @@ public class Ryan {
         deck.add(card);
     }
 
-    public void removeCardFromDeck(){
-        while(!deck.isEmpty()){
-            deck.removeFirst();
-        }
+    public void removeCardFromDeck(String card){
+        deck.remove(card);
+        System.out.println("**Card removed from deck: " + card);
     }
 
     public void showCardsInDeck(){
         try{
-            System.out.println("Cards in the deck " + deck);
+            System.out.println("**Cards in the deck " + deck);
         }catch(Exception e){
             System.out.println(e);
         }
@@ -29,7 +28,7 @@ public class Ryan {
 
     public void showCardsInHand(){
         try{
-            System.out.println("Cards in hand " + hand);
+            System.out.println("**Cards in hand " + hand);
         }catch (Exception e){
             System.out.println(e);
         }
@@ -38,7 +37,7 @@ public class Ryan {
 
     public void showCardsInGraveyard(){
         try{
-            System.out.println("Cards in the graveyard " + graveyard);
+            System.out.println("**Cards in the graveyard " + graveyard);
         }catch(Exception e){
             System.out.println(e);
         }
@@ -48,13 +47,13 @@ public class Ryan {
         String newCard = deck.getFirst().toString();
         hand.add(newCard);
         deck.remove(newCard);
-        System.out.println("Card drawn: " + newCard);
+        System.out.println("**Card drawn: " + newCard);
     }
 
     public void discardCard(String card){
         graveyard.add(card);
         hand.remove(card);
-        System.out.println("Discarded: " + card);
+        System.out.println("**Discarded: " + card);
     }
 
 }
@@ -67,6 +66,9 @@ class deckOfCards{
         ry.addCardToDeck("monster");
         ry.addCardToDeck("land");
         ry.addCardToDeck("spell");
+        ry.addCardToDeck("Ace of Hearts");
+        ry.showCardsInDeck();
+        ry.removeCardFromDeck("Ace of Hearts");
         ry.showCardsInDeck();
         ry.drawCard();
         ry.drawCard();
