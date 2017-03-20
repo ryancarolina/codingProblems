@@ -1,0 +1,80 @@
+import java.util.LinkedList;
+
+/**
+ * Created by ryanconklin on 3/7/17.
+ */
+
+public class Ryan {
+    LinkedList deck = new LinkedList();
+    LinkedList hand = new LinkedList();
+    LinkedList graveyard = new LinkedList();
+
+    public void addCardToDeck(String card){
+        deck.add(card);
+    }
+
+    public void removeCardFromDeck(){
+        while(!deck.isEmpty()){
+            deck.removeFirst();
+        }
+    }
+
+    public void showCardsInDeck(){
+        try{
+            System.out.println("Cards in the deck " + deck);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public void showCardsInHand(){
+        try{
+            System.out.println("Cards in hand " + hand);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+    }
+
+    public void showCardsInGraveyard(){
+        try{
+            System.out.println("Cards in the graveyard " + graveyard);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public void drawCard(){
+        String newCard = deck.getFirst().toString();
+        hand.add(newCard);
+        deck.remove(newCard);
+        System.out.println("Card drawn: " + newCard);
+    }
+
+    public void discardCard(String card){
+        graveyard.add(card);
+        hand.remove(card);
+        System.out.println("Discarded: " + card);
+    }
+
+}
+
+class deckOfCards{
+    public static void main(String [] args){
+        Ryan ry = new Ryan();
+
+        ry.addCardToDeck("mana");
+        ry.addCardToDeck("monster");
+        ry.addCardToDeck("land");
+        ry.addCardToDeck("spell");
+        ry.showCardsInDeck();
+        ry.drawCard();
+        ry.drawCard();
+        ry.showCardsInHand();
+        ry.discardCard("mana");
+        ry.showCardsInGraveyard();
+    }
+}
+
+
+
