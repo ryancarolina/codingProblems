@@ -1,0 +1,50 @@
+import org.junit.Test;
+
+import java.util.Stack;
+
+/**
+ * Created by ryanconklin on 3/7/17.
+ */
+
+public class Ryan {
+    Stack deck = new Stack();
+    Stack hand = new Stack();
+
+    public void pushToDeck(String card){
+        System.out.println("Add card to deck: " + card);
+        deck.push(card);
+    }
+
+    public void peekAtDeck(){
+        System.out.println("Peek at top card of the deck: ");
+        String topOfDeck = deck.peek().toString();
+        System.out.println(topOfDeck);
+    }
+
+    public void peekAtHand(){
+        System.out.println("Peek at top card of hand: ");
+        String topOfHand = hand.peek().toString();
+        System.out.println(topOfHand);
+    }
+
+    public void popFromDeckPushToHand(){
+        String cardDrawn = deck.pop().toString();
+        hand.push(cardDrawn);
+        System.out.println("From deck to hand: " + cardDrawn);
+    }
+
+    public void showDeck(Stack deck){
+        System.out.println(deck);
+    }
+
+    @Test
+    public void stackTest(){
+        pushToDeck("mana");
+        pushToDeck("monster");
+        peekAtDeck();
+        popFromDeckPushToHand();
+        peekAtHand();
+    }
+
+
+}
