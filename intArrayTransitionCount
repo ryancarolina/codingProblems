@@ -16,9 +16,8 @@ public class Ryan {
                 tranCount ++;
             }
         }
-        int retVal = tranCount;
-        System.out.println(retVal);
-        return retVal;
+        System.out.println(tranCount);
+        return tranCount;
     }
 
     @Test
